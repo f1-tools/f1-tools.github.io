@@ -19,4 +19,24 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // get all a elements in #navbarBasicExample
+  const $navbarLinks = Array.prototype.slice.call(document.querySelectorAll('#navbarBasicExample a'), 0);
+
+  const $navbarMenu = document.getElementById('navbarBasicExample');
+
+  // add click event to each link
+  $navbarLinks.forEach( el => {
+    el.addEventListener('click', () => {
+
+      // remove is-active class from all navbar-burger elements
+      $navbarBurgers.forEach( el => {
+        el.classList.remove('is-active');
+      });
+
+      // remove is-active class from navbar-menu
+      $navbarMenu.classList.remove('is-active');
+
+    }
+  )});
+
 });
